@@ -1,0 +1,32 @@
+#!/bin/bash
+
+while [ ! $# -eq 0 ]
+do
+    case "$1" in
+        -m | --mount)
+            if google-drive-ocamlfuse -label davis /home/grant/googledrive;
+            then
+                echo "mount in /home/grant/googledrive successful"
+            fi
+            exit
+            ;;
+
+        -u | --unmount)
+            if fusermount -u /home/grant/googledrive;
+            then
+                echo "unmount in /home/grant/googledrive successful"
+            fi
+            exit
+            ;;
+
+        -h | --help)
+            echo "-m | --mount : mounts drive in /home/grant/googledrive"
+            echo "-u | --unmount : unmounts drive in /home/grant/googledrive"
+            exit
+            ;;
+    esac
+done
+
+echo "no args provided"
+echo "use -h flag for help"
+exit
