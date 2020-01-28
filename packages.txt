@@ -1,0 +1,7 @@
+vim
+python3.8-dev
+cmake
+git
+clion
+pycharm-professional
+
