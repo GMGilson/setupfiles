@@ -3,6 +3,7 @@
 
 #Adding directories to PATH
 export PATH="$PATH:/home/grant/setup/bashscripts"
+export PATH="$PATH:/home/grant/Matlab/bin"
 
 #bring vim as default editor
 export EDITOR=vim
@@ -25,4 +26,8 @@ count(){
 ccat() {
 pygmentize -g $1 | perl -e 'print ++$i." $_" for <>'
 }
+
+source ~/.cargo/env
+
 #Grant bashrc end;
+
