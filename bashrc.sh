@@ -2,7 +2,7 @@
 #bash startup commands 
 
 #Adding directories to PATH
-export PATH="$PATH:$HOME/bashscripts"
+export PATH="$PATH:/home/grant/setup/bashscripts"
 
 #bring vim as default editor
 export EDITOR=vim
@@ -16,7 +16,7 @@ alias clip='xclip -sel clip'
 alias cmakeinit='touch CMakeLists.txt'
 alias mat22AL='ssh -x m22als6-6@point.math.ucdavis.edu'
 alias csif='ssh ggilson@pc3.cs.ucdavis.edu'
-
+alias pip='pip3'
 #bash functions
 count(){
 	ARG1=${1:-./}
