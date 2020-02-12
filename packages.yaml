@@ -10,6 +10,7 @@ apt:
   - "python3-pygments"
   - "xclip"
   - "google-drive-ocamlfuse"
+  - "meld"
 
 snap:
   - "clion"

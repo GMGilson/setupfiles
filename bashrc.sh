@@ -28,6 +28,6 @@ pygmentize -g $1 | perl -e 'print ++$i." $_" for <>'
 }
 
 source ~/.cargo/env
-
+source ~/setup/goExport.sh
 #Grant bashrc end;
 
