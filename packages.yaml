@@ -11,6 +11,7 @@ apt:
   - "xclip"
   - "google-drive-ocamlfuse"
   - "meld"
+  - "checkinstall"
 
 snap:
   - "clion"
