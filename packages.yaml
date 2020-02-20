@@ -12,6 +12,7 @@ apt:
   - "google-drive-ocamlfuse"
   - "meld"
   - "checkinstall"
+  - "valgrind"
 
 snap:
   - "clion"
