@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import subprocess
 import argparse
+import sys
 from yaml import safe_load
 from typing import *
 
@@ -40,39 +41,42 @@ def installer():
     parser = argparse.ArgumentParser(description='parses for what types of packages to install')
     parser.add_argument('-s', '--snap', action="store_true", help='enable installation of snap packages')
     parser.add_argument('-a', '--apt', action="store_true", help='enable installation of apt packages')
-    args = parser.parse_args()
-    try:
-        with open('./packages.yaml') as yaml:
-            temp = safe_load(yaml)
+    
+    args = parser.parse_args(args=None if sys.argv[1:] else ['--help'])
+   
 
-            if args.snap:
-                invokeSnap(temp['snap'])
+    
 
-            if args.apt:
-                invokeApt(temp['apt'])
-
-
-
-    except OSError:
-        return 50
-
-
-def main():
     print('Have you enabled passwordless sudo yet. (this script requires sudo)')
-
     answer = input('[y]es [n]o: ')
 
     if answer == 'n':
         print('exiting')
-        return 0
+        return 1
+
+    #answer = 'y'
 
     if answer == 'y':
-        installer()
-        return 0
+        try:
+            with open('./packages.yaml') as yaml:
+                temp = safe_load(yaml)
 
-    print('unknown input exiting...')
-    return 1
+                if args.snap:
+                    invokeSnap(temp['snap'])
 
+                if args.apt:
+                    invokeApt(temp['apt'])
+
+            return 0
+
+        except OSError:
+            return 50
+
+
+def main():
+    installer()
+
+    
 
 if __name__ == '__main__':
     main()

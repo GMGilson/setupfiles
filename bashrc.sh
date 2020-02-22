@@ -4,7 +4,7 @@
 #Adding directories to PATH
 export PATH="$PATH:/home/grant/setup/bashscripts"
 export PATH="$PATH:/home/grant/Matlab/bin"
-
+export PATH="$PATH:/home/grant/Golang/bin"
 #bring vim as default editor
 export EDITOR=vim
 
@@ -18,6 +18,7 @@ alias cmakeinit='touch CMakeLists.txt'
 alias mat22AL='ssh -x m22als6-6@point.math.ucdavis.edu'
 alias csif='ssh ggilson@pc3.cs.ucdavis.edu'
 alias pip='pip3'
+alias top='gotop'
 #bash functions
 count(){
 	ARG1=${1:-./}
