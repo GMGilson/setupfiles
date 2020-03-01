@@ -32,13 +32,14 @@ def addPPA(packages: List):
 def invokeSnap(packages: List):
     try:
         for package in packages:
-            subprocess.run(['sudo', 'snap', 'install', package,])
+            subprocess.run(['sudo', 'snap', 'install', package, '--classic'])
     except:
         raise OSError
 
 
 def installer():
     parser = argparse.ArgumentParser(description='parses for what types of packages to install')
+    parser.add_argument('-p', '--ppa', action="store_true", help='enable installation of ppa repositories, MUST BE DONE BEFORE -a FLAG;; Not currently implemented')
     parser.add_argument('-s', '--snap', action="store_true", help='enable installation of snap packages')
     parser.add_argument('-a', '--apt', action="store_true", help='enable installation of apt packages')
     
@@ -66,6 +67,9 @@ def installer():
 
                 if args.apt:
                     invokeApt(temp['apt'])
+                    
+                # if args.apt:
+                #     addPPA(['ppa'])
 
             return 0
 

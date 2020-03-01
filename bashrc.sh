@@ -2,9 +2,10 @@
 #bash startup commands 
 
 #Adding directories to PATH
-export PATH="$PATH:/home/grant/setup/bashscripts"
+export PATH="$PATH:/home/grant/setupfiles/bashscripts"
 export PATH="$PATH:/home/grant/Matlab/bin"
 export PATH="$PATH:/home/grant/Golang/bin"
+
 #bring vim as default editor
 export EDITOR=vim
 
@@ -29,6 +30,5 @@ pygmentize -g $1 | perl -e 'print ++$i." $_" for <>'
 }
 
 source ~/.cargo/env
-source ~/setup/goExport.sh
 #Grant bashrc end;
 
