@@ -13,11 +13,13 @@ apt:
   - "meld"
   - "checkinstall"
   - "valgrind"
+  - "zsh"
 
 snap:
   - "clion"
   - "pycharm-professional"
   - "brave"
+  - "code"
 
 pip:
 
@@ -25,9 +27,3 @@ pip:
 ppa:
   - "alessandro-strada/ppa"
 
-sh:
-  - "brew"
-
-
-brew:
-  - "tldr"
