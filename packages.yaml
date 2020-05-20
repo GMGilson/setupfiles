@@ -21,6 +21,7 @@ snap:
   - "pycharm-professional"
   - "brave"
   - "code"
+  - "spotify"
 
 pip:
 
